@@ -18,6 +18,8 @@ class RbenvChefdk < Formula
 
     To complete installation, run:
       $ mkdir "$(rbenv root)/versions/chefdk"
+      $ echo chef >> ~/.no_bundle_exec
+      $ echo berks >> ~/.no_bundle_exec
 
     You can confirm that this is set up correctly
       $ rbenv shell chefdk
