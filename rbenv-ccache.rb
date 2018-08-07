@@ -5,7 +5,7 @@ class RbenvCcache < Formula
 
   bottle :unneeded
 
-  depends_on :rbenv
+  depends_on "rbenv"
   depends_on "ccache"
 
   def install
