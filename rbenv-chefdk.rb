@@ -1,16 +1,17 @@
+# typed: false
 # frozen_string_literal: true
 
 class RbenvChefdk < Formula
-  desc 'Treat ChefDK as another version in rbenv'
-  homepage 'https://github.com/docwhat/rbenv-chefdk'
+  desc "Treat ChefDK as another version in rbenv"
+  homepage "https://github.com/docwhat/rbenv-chefdk"
 
-  head 'https://github.com/docwhat/rbenv-chefdk.git',
-       branch: 'master'
+  head "https://github.com/docwhat/rbenv-chefdk.git",
+       branch: "master"
 
-  depends_on 'rbenv'
+  depends_on "rbenv"
 
   def install
-    prefix.install Dir['*']
+    prefix.install Dir["*"]
   end
 
   def caveats
@@ -33,6 +34,6 @@ class RbenvChefdk < Formula
   end
 
   test do
-    assert_match 'chefdk.bash', shell_output('rbenv hooks install')
+    assert_match "chefdk.bash", shell_output("rbenv hooks install")
   end
 end
