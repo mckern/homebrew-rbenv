@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 # This will uninstall any aliases set up by `rbenv-alias`; fix that
 
 class RbenvUpdateRubies < Formula
-  desc "Update rbenv ruby versions"
-  homepage "https://github.com/toy/rbenv-update-rubies"
-  head "https://github.com/toy/rbenv-update-rubies.git"
+  desc 'Update rbenv ruby versions'
+  homepage 'https://github.com/toy/rbenv-update-rubies'
 
-  bottle :unneeded
+  head 'https://github.com/toy/rbenv-update-rubies.git',
+       branch: 'master'
 
-  depends_on "rbenv"
-  depends_on "rbenv-whatis"
+  depends_on 'rbenv'
+  depends_on 'rbenv-whatis'
 
   def install
-    prefix.install Dir["*"]
+    prefix.install Dir['*']
   end
 
   test do
-    assert_match "update-rubies.bash", shell_output("rbenv hooks install")
+    assert_match 'update-rubies.bash', shell_output('rbenv hooks install')
   end
 end

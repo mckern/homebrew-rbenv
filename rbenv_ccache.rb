@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 class RbenvCcache < Formula
-  desc "Make Ruby build faster by using ccache"
-  homepage "https://github.com/johann-p-koebbe/rbenv-ccache"
-  head "https://github.com/yyuu/rbenv-ccache.git"
+  desc 'Make Ruby build faster by using ccache'
+  homepage 'https://github.com/yyuu/rbenv-ccache'
 
-  bottle :unneeded
+  head 'https://github.com/yyuu/rbenv-ccache.git',
+       branch: 'master'
 
-  depends_on "rbenv"
-  depends_on "ccache"
+  depends_on 'rbenv'
+  depends_on 'ccache'
 
   def install
-    prefix.install Dir["*"]
+    prefix.install Dir['*']
   end
 
   test do
-    assert_match "ccache.bash", shell_output("rbenv hooks install")
+    assert_match 'ccache.bash', shell_output('rbenv hooks install')
   end
 end
